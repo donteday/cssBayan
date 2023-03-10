@@ -86,10 +86,15 @@ h1 {
         width: 100%;
         max-width: 600px;
         margin: 0 auto;
+        cursor: pointer;
     }
 
     .accordion:hover .list-title span{
         display: block;
+    }
+
+    .list-title {
+        cursor: pointer;
     }
 
     .list:hover .content{
