@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #282828;
+    background: rgb(51,51,51);
     color: white;
     font-family: 'Montserrat', sans-serif;
 }
@@ -21,8 +21,9 @@ h1 {
 .list-title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: #4a4a4a;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 10px;
     margin-top: 10px;
     font-weight: 700;
@@ -36,10 +37,21 @@ h1 {
     
 }
 
+.img-mem {
+    display: block;
+    width: 50%;
+    margin: 15px auto;
+    border-radius: 10px;
+    transition: transform .5s ease;
+}
 
-.list .check,
-.list-title span {
+
+.list .check{
     display: none;
+}
+
+.list-title span {
+    opacity: 0;
 }
 .list-title span {
     transition: transform .5s ease;
@@ -49,12 +61,16 @@ h1 {
 .list :checked + .list-title {
     color: aqua;
 }
-.list :checked ~ .content {
-    height: 300px;
+.list :checked  ~ .content {
+    height: 10em;
+}
+.list :checked ~ .content .img-mem {
+    transform: scale(1.7, 1);
 }
 
 .list :checked ~ .list-title span {
     transform: rotate(45deg);
+    opacity: 100%;
 }
 
 
@@ -76,21 +92,20 @@ h1 {
 
 @media (min-width: 1080px) {
     body {
-        background-color: #282828;
+        background: linear-gradient(90deg, rgba(51,51,51,1) 0%, rgba(62,62,62,1) 50%, rgba(51,51,51,1) 100%);
         color: white;
         font-family: 'Montserrat', sans-serif;
         font-size: 26px;
 
     }
     .accordion {
-        width: 100%;
-        max-width: 600px;
+        width: 50%;
         margin: 0 auto;
         cursor: pointer;
     }
 
     .accordion:hover .list-title span{
-        display: block;
+        opacity: 100%;
     }
 
     .list-title {
@@ -98,11 +113,15 @@ h1 {
     }
 
     .list:hover .content{
-        height: 300px;
+        height: 10em;
     }
 
     .list:hover span {
         transform: rotate(45deg);
+    }
+
+    .list:hover .content .img-mem {
+        transform: scale(1.7, 1);
     }
 
 }
