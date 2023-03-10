@@ -15,6 +15,8 @@ h1 {
 }
 
 .accordion {
+    width: 90%;
+    margin: 0 auto;
     padding: 10px;
 }
 
@@ -45,47 +47,60 @@ h1 {
     transition: transform .5s ease;
 }
 
-
 .list .check{
     display: none;
+} 
+
+.list :checked ~ .list-title {
+    color: #00ffff;
 }
 
-.list-title span {
-    opacity: 0;
-}
-.list-title span {
-    transition: transform .5s ease;
-}
-
-
-.list :checked + .list-title {
-    color: aqua;
-}
-.list :checked  ~ .content {
+.list :checked ~ .content {
     height: 10em;
 }
+
 .list :checked ~ .content .img-mem {
     transform: scale(1.7, 1);
 }
 
-.list :checked ~ .list-title span {
-    transform: rotate(45deg);
-    opacity: 100%;
+
+
+.list-title span {
+    display: block;
+    filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(69deg) brightness(110%) contrast(101%);
+    width: 100%;
+    max-width: 0.7em;
+    height: 1em;
+    background-image: url(img/arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    opacity: 0%;
+    transition: transform .5s ease;
 }
 
+.list :checked ~ .list-title span {
+    filter: invert(93%) sepia(43%) saturate(4212%) hue-rotate(100deg) brightness(105%) contrast(101%);
+    transform: rotate(-90deg);
+    opacity: 100%;
+}
 
 @media (min-width: 820px) {
     body {
         background-color: #282828;
         color: white;
         font-family: 'Montserrat', sans-serif;
-        font-size: 36px;
+        font-size: 30px;
 
     }
     .accordion {
         width: 100%;
         max-width: 600px;
         margin: 0 auto;
+    }
+
+    .content {
+        max-height: 8em;
     }
 
 }
@@ -103,6 +118,9 @@ h1 {
         margin: 0 auto;
         cursor: pointer;
     }
+    .content {
+        max-height: 10em;
+    }
 
     .accordion:hover .list-title span{
         opacity: 100%;
@@ -117,7 +135,7 @@ h1 {
     }
 
     .list:hover span {
-        transform: rotate(45deg);
+        transform: rotate(-90deg);
     }
 
     .list:hover .content .img-mem {
