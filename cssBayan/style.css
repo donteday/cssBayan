@@ -15,7 +15,6 @@ h1 {
 }
 
 .accordion {
-
     padding: 10px;
 }
 
@@ -42,12 +41,20 @@ h1 {
 .list-title span {
     display: none;
 }
+.list-title span {
+    transition: transform .5s ease;
+}
+
 
 .list :checked + .list-title {
     color: aqua;
 }
 .list :checked ~ .content {
     height: 300px;
+}
+
+.list :checked ~ .list-title span {
+    transform: rotate(45deg);
 }
 
 
@@ -63,6 +70,34 @@ h1 {
         width: 100%;
         max-width: 600px;
         margin: 0 auto;
+    }
+
+}
+
+@media (min-width: 1080px) {
+    body {
+        background-color: #282828;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 26px;
+
+    }
+    .accordion {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .accordion:hover .list-title span{
+        display: block;
+    }
+
+    .list:hover .content{
+        height: 300px;
+    }
+
+    .list:hover span {
+        transform: rotate(45deg);
     }
 
 }
