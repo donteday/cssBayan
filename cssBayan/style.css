@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #282828;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.accordion {
+
+    padding: 10px;
+}
+
+.list-title {
+    display: flex;
+    justify-content: space-between;
+    background-color: #4a4a4a;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.content {
+    padding: 10px;
+}
+
+.list .content,
+.list .check,
+.list-title span {
+    display: none;
+}
+
+.list :checked + .list-title {
+    color: aqua;
+}
+.list :checked ~ .content {
+    display: block;
+}
+
