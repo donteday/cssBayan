@@ -132,6 +132,10 @@ h1 {
         max-height: 16em;
     }
 
+    .accordion:hover span {
+        opacity: 100%;
+    }    
+
     .list:hover span {
         transform: rotate(-90deg);
         opacity: 100%;
