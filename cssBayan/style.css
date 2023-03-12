@@ -22,7 +22,7 @@ h1 {
 .accordion {
     width: 90%;
     margin: auto;
-    padding: 1em;
+    padding: 0 2vh;
 }
 
 .list-title {
@@ -115,7 +115,7 @@ h1 {
     }
 
     .accordion {
-        width: 50%;
+        width: 70%;
         margin: 0 auto;
         cursor: pointer;
     }
@@ -134,7 +134,7 @@ h1 {
 
     .accordion:hover span {
         opacity: 100%;
-    }    
+    }
 
     .list:hover span {
         transform: rotate(-90deg);
